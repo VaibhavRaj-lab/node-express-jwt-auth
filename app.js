@@ -15,8 +15,8 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-
-mongoose.connect('mongodb+srv://node-auth:vaibhav123@cluster0.rk1ef.mongo.net/node-auth', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+const dbURI = 'mongodb+srv://node-auth:vaibhav123@cluster0.rk1ef.mongodb.net/node-auth';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) => app.listen(process.env.PORT||3000))
   .catch((err) => console.log(err));
 
